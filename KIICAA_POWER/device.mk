@@ -1,9 +1,12 @@
 
 include device/LEAGOO/$(MTK_TARGET_PROJECT)/ProjectConfig.mk
 
-#LOCAL_KERNEL := device/LEAGOO/KIICAA_POWER/zImage
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_KERNEL):kernel
+######################################################
+ifneq ($(strip $(BUILD_KERNEL)),yes)
+LOCAL_KERNEL := device/LEAGOO/KIICAA_POWER/zImage
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+endif
 ######################################################
 
 # PRODUCT_COPY_FILES overwrite
